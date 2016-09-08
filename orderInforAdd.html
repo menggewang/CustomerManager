@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>订单信息添加</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/jcdate.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript">
+
+$(function(){
+  var $qqServer = $('.qqserver');
+  var $qqserverFold = $('.qqserver_fold');
+  var $qqserverUnfold = $('.qqserver_arrow');
+  $qqserverFold.mouseover(function(){
+    $qqserverFold.hide();
+    $qqServer.addClass('unfold');
+  });
+  $qqserverUnfold.click(function(){
+    $qqServer.removeClass('unfold');
+    $qqserverFold.show();
+  });
+  //窗体宽度小鱼1024像素时不显示客服QQ
+  function resizeQQserver(){
+    $qqServer[document.documentElement.clientWidth < 1024 ? 'hide':'show']();
+  }
+  $(window).bind("load resize",function(){
+    resizeQQserver();
+  });
+});
+
+
+
+
+</script>
+</head>
+
+<body>
+
+    <div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="#">首页</a></li>
+    <li><a href="#">增加部门</a></li>
+    </ul>
+    </div>
+    
+    <div class="formtitle"><span>订单信息添加</span></div>
+    <form class="form-inline">
+        <div class="form-group">
+            <label>商品编号&nbsp;&nbsp;</label><input name="" type="text" placeholder="123456" class="dfinput"/>
+        </div>
+        <div class="form-group">
+            <label>业务员&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <select class="form-control">
+              <option>请选择-----</option>
+              <option>张三</option>
+              <option>李四</option>
+              <option>王五</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>客户姓名&nbsp;&nbsp;</label>
+            <select class="form-control">
+              <option>请选择-----</option>
+              <option>张三</option>
+              <option>李四</option>
+              <option>王五</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>联系人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <select class="form-control">
+              <option>请选择-----</option>
+              <option>张三</option>
+              <option>李四</option>
+              <option>王五</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>商品列表&nbsp;&nbsp;</label>
+            <select class="form-control"  style="width:302px;">
+              <option>请选择-----</option>
+              <option>张三</option>
+              <option>李四</option>
+              <option>王五</option>
+            </select>
+        <span class="badge"><a href="#">新建</a></span>
+        </div>
+        <div class="form-group">
+            <label>商品数量&nbsp;&nbsp;</label><input name="" type="text" placeholder="各种用电设备" class="dfinput"/>
+        </div>
+
+         <div class="form-group">
+            <label>创建日期&nbsp;&nbsp;&nbsp;&nbsp;</label><input name="" type="text" placeholder="电子产品" class="jcDate" style="width:345px; line-height:32px;border: 1px solid rgb(204, 204, 204);transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;border-radius: 4px;color: rgb(85, 85, 85);background-color: rgb(255, 255, 255);"/>
+        </div>
+        <div class="form-group">
+            <label>备注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input name="" type="text" placeholder="无" class="dfinput" />
+        </div>
+        <br>
+        <input name="" type="submit" class="dfinput" value="提交" style="width:60px; margin-left:60%;" />
+        <input name="" type="reset" class="dfinput" value="重置" style="width:60px; margin-left:1%;"/>
+    </form>
+    </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script> 
+<script src="js/jQuery-jcDate.js"></script>
+<script type="text/javascript">
+$(function (){
+  $("input.jcDate").jcDate({                 
+    IcoClass : "jcDateIco",
+    Event : "click",
+    Speed : 100,
+    Left : 0,
+    Top : 28,
+    format : "-",
+    Timeout : 100
+  });
+});
+</script>
+</body>
+
+</html>
